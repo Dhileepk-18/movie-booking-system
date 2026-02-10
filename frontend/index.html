@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CineBook - Movie Recommendations</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Header Navigation -->
+  <header>
+    <nav>
+      <div class="logo">🎬 CINEBOOK</div>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="preferences.html">Preferences</a></li>
+        <li><a href="#movies">Movies</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+      <div class="auth-buttons">
+        <a href="login.html" class="btn btn-secondary">Login</a>
+        <a href="register.html" class="btn btn-primary">Register</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>🎭 Welcome to CineBook</h1>
+    <p>Discover your next favorite movie and book tickets instantly</p>
+    <div class="cta-buttons">
+      <a href="preferences.html" class="btn btn-primary">Set Preferences</a>
+      <a href="#movies" class="btn btn-secondary">Browse Movies</a>
+    </div>
+  </section>
+
+  <!-- Main Container -->
+  <div class="container">
+    <!-- Featured Movies Section -->
+    <section id="movies">
+      <h2 class="section-title">✨ Featured Movies</h2>
+      <div id="movies-grid" class="movies-grid">
+        <!-- Movies will be loaded here by JavaScript -->
+      </div>
+    </section>
+
+    <!-- Info Section -->
+    <section style="background: var(--dark-card); padding: 2rem; border-radius: 8px; border: 2px solid var(--border-color); margin: 3rem 0;">
+      <h2 style="text-align: center; margin-bottom: 2rem;">Why Choose CineBook?</h2>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
+        <div style="text-align: center;">
+          <div style="font-size: 2rem; margin-bottom: 1rem;">⭐</div>
+          <h3 style="color: var(--accent-gold); margin-bottom: 0.5rem;">Smart Recommendations</h3>
+          <p style="color: var(--text-secondary);">Get personalized movie suggestions based on your preferences</p>
+        </div>
+        <div style="text-align: center;">
+          <div style="font-size: 2rem; margin-bottom: 1rem;">🎟️</div>
+          <h3 style="color: var(--accent-gold); margin-bottom: 0.5rem;">Easy Booking</h3>
+          <p style="color: var(--text-secondary);">Select seats and book tickets in just a few clicks</p>
+        </div>
+        <div style="text-align: center;">
+          <div style="font-size: 2rem; margin-bottom: 1rem;">💰</div>
+          <h3 style="color: var(--accent-gold); margin-bottom: 0.5rem;">Best Prices</h3>
+          <p style="color: var(--text-secondary);">Get the best deals on movie tickets</p>
+        </div>
+        <div style="text-align: center;">
+          <div style="font-size: 2rem; margin-bottom: 1rem;">🔒</div>
+          <h3 style="color: var(--accent-gold); margin-bottom: 0.5rem;">Secure Payment</h3>
+          <p style="color: var(--text-secondary);">Your data is safe and secure with us</p>
+        </div>
+        <div style="text-align: center;">
+          <div style="font-size: 2rem; margin-bottom: 1rem;">📱</div>
+          <h3 style="color: var(--accent-gold); margin-bottom: 0.5rem;">Mobile Friendly</h3>
+          <p style="color: var(--text-secondary);">Book on the go with our responsive design</p>
+        </div>
+        <div style="text-align: center;">
+          <div style="font-size: 2rem; margin-bottom: 1rem;">⚡</div>
+          <h3 style="color: var(--accent-gold); margin-bottom: 0.5rem;">Instant Confirmation</h3>
+          <p style="color: var(--text-secondary);">Get instant booking confirmation and digital tickets</p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Footer -->
+  <footer id="contact">
+    <p>&copy; 2026 CineBook. All rights reserved.</p>
+    <p>Email: support@cinebook.com | Phone: +91-630193XXX</p>
+    <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="index.js"></script>
+  <script>
+    // Initialize page after all modules are loaded
+    document.addEventListener('DOMContentLoaded', () => {
+      if (typeof loadUserSession === 'function') loadUserSession();
+      if (typeof updateAuthUI === 'function') updateAuthUI();
+
+      const grid = document.getElementById('movies-grid');
+      if (!grid) return;
+
+      // If user has set preferences (non-empty), show filtered results automatically
+      const prefs = window.userSession ? window.userSession.preferences : null;
+      const hasPrefs = prefs && (
+        (Array.isArray(prefs.genres) && prefs.genres.length > 0) ||
+        !!prefs.language ||
+        !!prefs.mood ||
+        (prefs.minRating && prefs.minRating > 1)
+      );
+
+      if (hasPrefs && typeof filterMoviesByPreferences === 'function') {
+        filterMoviesByPreferences();
+      } else if (typeof renderAllMovies === 'function') {
+        renderAllMovies();
+      }
+
+      // Modal close on background click
+      document.addEventListener('click', (e) => {
+        const modal = document.getElementById('rating-modal');
+        if (modal && e.target === modal) {
+          if (typeof closeRatingModal === 'function') closeRatingModal();
+        }
+      });
+    });
+  </script>
+</body>
+</html>

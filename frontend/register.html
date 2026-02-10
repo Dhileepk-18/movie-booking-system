@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register - CineBook</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Header Navigation -->
+  <header>
+    <nav>
+      <div class="logo">🎬 CINEBOOK</div>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="preferences.html">Preferences</a></li>
+        <li><a href="index.html#movies">Movies</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+      <div class="auth-buttons">
+        <a href="login.html" class="btn btn-secondary">Login</a>
+        <a href="register.html" class="btn btn-primary">Register</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>🎭 Join CineBook</h1>
+    <p>Create your account and start booking movies</p>
+  </section>
+
+  <!-- Register Form -->
+  <div class="container">
+    <form class="form-container" onsubmit="handleRegister(event)">
+      <h2 style="text-align: center; margin-bottom: 2rem;">Create Account</h2>
+
+      <div class="form-group">
+        <label for="register-name">Full Name</label>
+        <input 
+          type="text" 
+          id="register-name" 
+          placeholder="Enter your full name" 
+          required
+        >
+      </div>
+
+      <div class="form-group">
+        <label for="register-email">Email</label>
+        <input 
+          type="email" 
+          id="register-email" 
+          placeholder="Enter your email" 
+          required
+        >
+      </div>
+
+      <div class="form-group">
+        <label for="register-password">Password</label>
+        <input 
+          type="password" 
+          id="register-password" 
+          placeholder="Create a password" 
+          required
+        >
+      </div>
+
+      <div class="form-group">
+        <label for="register-confirm-password">Confirm Password</label>
+        <input 
+          type="password" 
+          id="register-confirm-password" 
+          placeholder="Confirm your password" 
+          required
+        >
+      </div>
+
+      <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">
+        ✨ Create Account
+      </button>
+
+      <p style="text-align: center; color: var(--text-secondary); margin-top: 1.5rem;">
+        Already have an account? <a href="login.html">Login here</a>
+      </p>
+    </form>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2026 CineBook. All rights reserved.</p>
+    <p>Email: support@cinebook.com | Phone: +1-800-CINEMA</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

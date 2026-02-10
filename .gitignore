@@ -1,0 +1,49 @@
+# OS Files
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# IDE & Editor
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+*.code-workspace
+
+# Node (if you add backend)
+node_modules/
+npm-debug.log
+yarn-error.log
+package-lock.json
+
+# Python (if you add backend)
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+env/
+
+# Build & Distribution
+dist/
+build/
+*.zip
+
+# Environment Variables
+.env
+.env.local
+.env.*.local
+
+# Logs
+logs/
+*.log
+
+# Database (for future backend)
+*.db
+*.sqlite
+*.sqlite3
+
+# Temporary files
+*.tmp
+temp/

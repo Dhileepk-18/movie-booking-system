@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Preferences - CineBook</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Header Navigation -->
+  <header>
+    <nav>
+      <div class="logo">🎬 CINEBOOK</div>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="preferences.html">Preferences</a></li>
+        <li><a href="index.html#movies">Movies</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+
+      <div class="auth-buttons">
+        <a href="login.html" class="btn btn-secondary">Login</a>
+        <a href="register.html" class="btn btn-primary">Register</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>🎯 Your Preferences</h1>
+    <p>Help us recommend movies you'll love</p>
+  </section>
+
+  <!-- Preferences Form -->
+  <div class="container">
+    <div style="max-width: 900px; margin: 0 auto;">
+      <form id="preferences-form" class="preferences-section">
+        
+        <!-- Genre Preferences -->
+        <div class="preference-group" style="background: var(--dark-card); padding: 2rem; border-radius: 8px; border: 2px solid var(--border-color); margin-bottom: 2rem;">
+          <h3 style="color: var(--accent-gold); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.5rem;">
+            🎬 Favorite Genres <span style="font-size: 0.8rem; color: var(--text-secondary);">(Select all you like)</span>
+          </h3>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem;">
+            <label class="checkbox-label">
+              <input type="checkbox" value="Action" data-type="genre" onchange="handlePreferenceChange(event)" />
+              <span>⚔️ Action</span>
+            </label>
+            <label class="checkbox-label">
+              <input type="checkbox" value="Comedy" data-type="genre" onchange="handlePreferenceChange(event)" />
+              <span>😂 Comedy</span>
+            </label>
+            <label class="checkbox-label">
+              <input type="checkbox" value="Drama" data-type="genre" onchange="handlePreferenceChange(event)" />
+              <span>🎭 Drama</span>
+            </label>
+            <label class="checkbox-label">
+              <input type="checkbox" value="Fantasy" data-type="genre" onchange="handlePreferenceChange(event)" />
+              <span>✨ Fantasy</span>
+            </label>
+            <label class="checkbox-label">
+              <input type="checkbox" value="Romance" data-type="genre" onchange="handlePreferenceChange(event)" />
+              <span>💕 Romance</span>
+            </label>
+            <label class="checkbox-label">
+              <input type="checkbox" value="Sci-Fi" data-type="genre" onchange="handlePreferenceChange(event)" />
+              <span>🚀 Sci-Fi</span>
+            </label>
+            <label class="checkbox-label">
+              <input type="checkbox" value="Thriller" data-type="genre" onchange="handlePreferenceChange(event)" />
+              <span>🔍 Thriller</span>
+            </label>
+            <label class="checkbox-label">
+              <input type="checkbox" value="Horror" data-type="genre" onchange="handlePreferenceChange(event)" />
+              <span>👻 Horror</span>
+            </label>
+            <label class="checkbox-label">
+              <input type="checkbox" value="Sports" data-type="genre" onchange="handlePreferenceChange(event)" />
+              <span>⚽ Sports</span>
+            </label>
+            <label class="checkbox-label">
+              <input type="checkbox" value="Crime" data-type="genre" onchange="handlePreferenceChange(event)" />
+              <span>🔫 Crime</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Language Preferences -->
+        <div class="preference-group" style="background: var(--dark-card); padding: 2rem; border-radius: 8px; border: 2px solid var(--border-color); margin-bottom: 2rem;">
+          <h3 style="color: var(--accent-gold); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.5rem;">
+            🗣️ Language <span style="font-size: 0.8rem; color: var(--text-secondary);">(Choose one or leave blank)</span>
+          </h3>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1.5rem;">
+            <label class="radio-label">
+              <input type="radio" value="" name="language" data-type="language" onchange="handlePreferenceChange(event)" />
+              <span>🌍 All Languages</span>
+            </label>
+            <label class="radio-label">
+              <input type="radio" value="English" name="language" data-type="language" onchange="handlePreferenceChange(event)" />
+              <span>🇬🇧 English</span>
+            </label>
+            <label class="radio-label">
+              <input type="radio" value="Hindi" name="language" data-type="language" onchange="handlePreferenceChange(event)" />
+              <span>🇮🇳 Hindi</span>
+            </label>
+            <label class="radio-label">
+              <input type="radio" value="Telugu" name="language" data-type="language" onchange="handlePreferenceChange(event)" />
+              <span>🎬 Telugu</span>
+            </label>
+            <label class="radio-label">
+              <input type="radio" value="Tamil" name="language" data-type="language" onchange="handlePreferenceChange(event)" />
+              <span>🎬 Tamil</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Mood Preferences -->
+        <div class="preference-group" style="background: var(--dark-card); padding: 2rem; border-radius: 8px; border: 2px solid var(--border-color); margin-bottom: 2rem;">
+          <h3 style="color: var(--accent-gold); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.5rem;">
+            😊 Mood <span style="font-size: 0.8rem; color: var(--text-secondary);">(Choose one or leave blank)</span>
+          </h3>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1.5rem;">
+            <label class="radio-label">
+              <input type="radio" value="" name="mood" data-type="mood" onchange="handlePreferenceChange(event)" />
+              <span>🎯 Any Mood</span>
+            </label>
+            <label class="radio-label">
+              <input type="radio" value="fun" name="mood" data-type="mood" onchange="handlePreferenceChange(event)" />
+              <span>😄 Fun & Light</span>
+            </label>
+            <label class="radio-label">
+              <input type="radio" value="emotional" name="mood" data-type="mood" onchange="handlePreferenceChange(event)" />
+              <span>💔 Emotional</span>
+            </label>
+            <label class="radio-label">
+              <input type="radio" value="thrilling" name="mood" data-type="mood" onchange="handlePreferenceChange(event)" />
+              <span>⚡ Thrilling</span>
+            </label>
+            <label class="radio-label">
+              <input type="radio" value="suspenseful" name="mood" data-type="mood" onchange="handlePreferenceChange(event)" />
+              <span>😰 Suspenseful</span>
+            </label>
+            <label class="radio-label">
+              <input type="radio" value="adventurous" name="mood" data-type="mood" onchange="handlePreferenceChange(event)" />
+              <span>🗺️ Adventurous</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Minimum Rating -->
+        <div class="preference-group" style="background: var(--dark-card); padding: 2rem; border-radius: 8px; border: 2px solid var(--border-color); margin-bottom: 2rem;">
+          <h3 style="color: var(--accent-gold); margin-bottom: 1.5rem;">⭐ Minimum Rating</h3>
+          <div style="display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap;">
+            <input type="range" id="minRating" name="minRating" min="1" max="5" step="0.5" value="1" data-type="rating" oninput="handlePreferenceChange(event)" style="flex: 1; min-width: 200px; height: 8px; border-radius: 5px; background: linear-gradient(to right, #d4af37, #f5d547); cursor: pointer;">
+            <div style="display: flex; align-items: baseline; gap: 0.5rem; background: rgba(212, 175, 55, 0.1); padding: 0.8rem 1.5rem; border-radius: 6px; border: 1px solid var(--accent-gold);">
+              <span id="ratingValue" style="font-size: 1.8rem; font-weight: bold; color: var(--accent-gold);">1.0</span>
+              <span style="color: var(--text-secondary);">/5.0</span>
+            </div>
+          </div>
+          <p style="font-size: 0.95rem; color: var(--text-secondary); margin-top: 1rem; line-height: 1.6;">Only show movies rated ⭐ <span id="ratingDisplay" style="color: var(--accent-gold); font-weight: bold;">1.0</span> or higher. Slide to filter by quality!</p>
+        </div>
+
+        <!-- Action Buttons -->
+        <div style="display: flex; gap: 1rem; margin-top: 2.5rem; flex-wrap: wrap;">
+          <button type="button" class="btn btn-primary" style="flex: 1; min-width: 150px; padding: 1rem;" onclick="applyPreferences()">
+            ✓ Apply Preferences
+          </button>
+          <button type="button" class="btn btn-secondary" style="flex: 1; min-width: 150px; padding: 1rem;" onclick="clearPreferences()">
+            ⟲ Clear All
+          </button>
+          <a href="index.html" class="btn btn-secondary" style="flex: 1; min-width: 150px; text-align: center; padding: 1rem;">
+            ← Back to Home
+          </a>
+        </div>
+      </form>
+
+      <!-- Tips Section -->
+      <section style="background: rgba(212, 175, 55, 0.05); padding: 2rem; border-radius: 8px; border-left: 4px solid var(--accent-gold); margin-top: 3rem;">
+        <h2 style="text-align: center; margin-bottom: 1.5rem; color: var(--accent-gold);">💡 Pro Tips</h2>
+        <ul style="color: var(--text-secondary); line-height: 1.8; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
+          <li><strong style="color: var(--accent-gold);">🎯 Be Specific:</strong> Select genres and languages you genuinely enjoy for better recommendations</li>
+          <li><strong style="color: var(--accent-gold);">⭐ Set Your Standard:</strong> Adjust the rating slider to see only quality movies that match your taste</li>
+          <li><strong style="color: var(--accent-gold);">🎬 Mix It Up:</strong> Don't hesitate to explore new genres - you might discover hidden gems!</li>
+          <li><strong style="color: var(--accent-gold);">📊 Update Often:</strong> Your preferences can change - revisit this page anytime to refine your choices</li>
+          <li><strong style="color: var(--accent-gold);">⭐ Rate Movies:</strong> Rate movies you watch to help us improve your recommendations</li>
+          <li><strong style="color: var(--accent-gold);">🔄 Leave Blank:</strong> Skip any preference to see all available movies in that category</li>
+        </ul>
+      </section>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2026 CineBook. All rights reserved.</p>
+    <p>Email: support@cinebook.com | Phone: +1-800-CINEMA</p>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="preferences.js"></script>
+  <script>
+    function handlePreferenceChange(event) {
+      const target = event.target;
+      const type = target.dataset.type;
+
+      if (!window.userSession.preferences) {
+        window.userSession.preferences = {
+          genres: [],
+          language: null,
+          mood: null,
+          minRating: 1.0
+        };
+      }
+
+      if (type === 'genre') {
+        const value = target.value;
+        if (target.checked) {
+          if (!window.userSession.preferences.genres.includes(value)) {
+            window.userSession.preferences.genres.push(value);
+          }
+        } else {
+          window.userSession.preferences.genres = window.userSession.preferences.genres.filter(g => g !== value);
+        }
+      } else if (type === 'language') {
+        window.userSession.preferences.language = target.value || null;
+      } else if (type === 'mood') {
+        window.userSession.preferences.mood = target.value || null;
+      } else if (type === 'rating') {
+        window.userSession.preferences.minRating = parseFloat(target.value);
+        const ratingValue = document.getElementById('ratingValue');
+        const ratingDisplay = document.getElementById('ratingDisplay');
+        if (ratingValue) ratingValue.textContent = target.value;
+        if (ratingDisplay) ratingDisplay.textContent = target.value;
+      }
+
+      saveUserSession();
+    }
+
+    function applyPreferences() {
+      saveUserSession();
+      showAlert('✓ Preferences saved! Showing filtered movies...', 'success');
+      setTimeout(() => {
+        window.location.href = 'index.html';
+      }, 1200);
+    }
+
+    function clearPreferences() {
+      if (confirm('Are you sure you want to clear all preferences?')) {
+        window.userSession.preferences = {
+          genres: [],
+          language: null,
+          mood: null,
+          minRating: 1.0
+        };
+        saveUserSession();
+        location.reload();
+        showAlert('✓ All preferences cleared!', 'success');
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      if (typeof loadUserSession === 'function') loadUserSession();
+      if (typeof updateAuthUI === 'function') updateAuthUI();
+      
+      if (window.userSession && window.userSession.preferences) {
+        const prefs = window.userSession.preferences;
+        
+        const genreCheckboxes = document.querySelectorAll('input[data-type="genre"]');
+        genreCheckboxes.forEach(cb => {
+          if (prefs.genres && prefs.genres.includes(cb.value)) {
+            cb.checked = true;
+          }
+        });
+        
+        if (prefs.language) {
+          const langRadios = document.querySelectorAll('input[data-type="language"]');
+          langRadios.forEach(radio => {
+            radio.checked = radio.value === prefs.language;
+          });
+        }
+        
+        if (prefs.mood) {
+          const moodRadios = document.querySelectorAll('input[data-type="mood"]');
+          moodRadios.forEach(radio => {
+            radio.checked = radio.value === prefs.mood;
+          });
+        }
+        
+        if (prefs.minRating) {
+          const ratingSlider = document.getElementById('minRating');
+          if (ratingSlider) {
+            ratingSlider.value = prefs.minRating;
+            const ratingValue = document.getElementById('ratingValue');
+            const ratingDisplay = document.getElementById('ratingDisplay');
+            if (ratingValue) ratingValue.textContent = prefs.minRating;
+            if (ratingDisplay) ratingDisplay.textContent = prefs.minRating;
+          }
+        }
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - CineBook</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Header Navigation -->
+  <header>
+    <nav>
+      <div class="logo">🎬 CINEBOOK</div>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="preferences.html">Preferences</a></li>
+        <li><a href="index.html#movies">Movies</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+      <div class="auth-buttons">
+        <a href="login.html" class="btn btn-secondary">Login</a>
+        <a href="register.html" class="btn btn-primary">Register</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>🎭 Welcome Back</h1>
+    <p>Login to your CineBook account</p>
+  </section>
+
+  <!-- Login Form -->
+  <div class="container">
+    <form class="form-container" onsubmit="handleLogin(event)">
+      <h2 style="text-align: center; margin-bottom: 2rem;">Login</h2>
+
+      <div class="form-group">
+        <label for="login-email">Email</label>
+        <input 
+          type="email" 
+          id="login-email" 
+          placeholder="Enter your email" 
+          required
+        >
+      </div>
+
+      <div class="form-group">
+        <label for="login-password">Password</label>
+        <input 
+          type="password" 
+          id="login-password" 
+          placeholder="Enter your password" 
+          required
+        >
+      </div>
+
+      <button type="submit" class="btn btn-primary" style="width: 100%;">
+        🔓 Login
+      </button>
+
+      <p style="text-align: center; color: var(--text-secondary); margin-top: 1.5rem;">
+        Don't have an account? <a href="register.html">Register here</a>
+      </p>
+
+      <p style="text-align: center; color: var(--text-secondary); margin-top: 1rem; font-size: 0.85rem;">
+        Demo credentials: any email and password will work
+      </p>
+    </form>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2026 CineBook. All rights reserved.</p>
+    <p>Email: support@cinebook.com | Phone: +91-630193XXXX</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
